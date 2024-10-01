@@ -1,12 +1,12 @@
 const express = require('express')
 const cors = require('cors')
-const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
+const helmet = require('helmet')
 
-const { restricted } = require('../api/auth/auth-middleware.js')
 
-const authRouter = require('../api/auth/auth-router.js')
-const userRouter = require('../api/users/user-router.js')
+
+const authRouter = require('../api/auth/auth-router')
+
 
 const server = express()
 
@@ -17,4 +17,5 @@ server.use(cookieParser())
 
 server.use('/api/auth', authRouter)
 
-server.use('/api/users', userRouter, restricted)
+
+module.exports = server
