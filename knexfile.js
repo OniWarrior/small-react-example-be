@@ -21,6 +21,7 @@ module.exports = {
         ...sharedConfig,
         connection: process.env.DEV_DATABASE_URL
 
+
     },
 
     testing: {
